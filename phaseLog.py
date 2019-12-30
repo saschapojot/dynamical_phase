@@ -60,25 +60,16 @@ Gkm = lambdify([k, t], Gkm, 'numpy')
 
 kStart = 0
 kEnd = 2 * np.pi
-kN = 400 + 1
+kN = 1000 + 1
 kDelta = (kEnd - kStart) / ((kN - 1))
 kRange = range(0, kN)
 kStep = (kEnd - kStart) / (kN - 1)
 
 tStart = 0
-tN = 400 + 1
-tStep = 0.05
+tN = 1000 + 1
+tStep = 20/(tN-1)
 tRange = range(0, tN)
 tDelta = tStep
-
-
-def f(x):
-    xTmp = np.angle(x) / (2 * np.pi)
-    if xTmp >= 1 / 2:
-        xTmp -= 1
-    if xTmp <= -1 / 2:
-        xTmp += 1
-    return xTmp
 
 
 def g(x):
